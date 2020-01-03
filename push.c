@@ -21,7 +21,7 @@ int isnum(char *str)
 void _stack(stack_t **stack, stack_t *new)
 {
 	new->n = atoi(arg_holder.arg);
-	if (!(*stack))
+	if (*stack == NULL)
 	{
 		new->prev = NULL;
 		new->next = NULL;
@@ -45,7 +45,7 @@ void _queue(stack_t **stack, stack_t *new)
 
 	new->n = atoi(arg_holder.arg);
 	new->next = NULL;
-	if (!(*stack))
+	if (*stack == NULL)
 	{
 		new->prev = NULL;
 		*stack = new;
@@ -71,18 +71,18 @@ void push(stack_t **stack, unsigned int line_num)
 	if (!(isnum(arg_holder.arg)))
 	{
 		printf("L%u: usage: push integer\n", line_num);
-		free(stack);
+		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
 	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
+	if (new_node == NULL)
 	{
 		printf("Error: malloc failed\n");
-		free(stack);
+		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
 	if (arg_holder.SQ)
-		_stack(stack, new);
+		_stack(stack, new_node);
 	else
-		_queue(stack, new);
+		_queue(stack, new_node);
 }

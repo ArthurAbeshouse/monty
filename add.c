@@ -12,7 +12,7 @@ void add(stack_t **stack, unsigned int line_num)
 	if (!stack || !(*stack) || !(*stack)->next)
 	{
 		printf("L%d: can't add, stack too short\n", line_num);
-		free(stack);
+		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
 

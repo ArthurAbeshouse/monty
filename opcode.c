@@ -2,16 +2,16 @@
 
 void opcode(char *command, unsigned int line_num, stack_t **stack)
 {
-	int i = 0;
+        int i = 0;
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
-/*		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap}, */
+		{"pint", pint},
+                {"pop", pop},
+		{"swap", swap},
 		{"add", add},
-/*		{"nop", nop},
-		{"sub", sub},
+		{"nop", nop},
+		/*		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
@@ -24,7 +24,6 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 
 	if (command[0] == '#')
 		return;
-
 	if (strcmp(command, "stack") == 0)
 	{
 		arg_holder.SQ = 1;
@@ -45,6 +44,6 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 		}
 	}
 	printf("L%d: unknown instruction %s\n", line_num, command);
-	free(stack);
+	free_all(stack);
 	exit(EXIT_FAILURE);
 }

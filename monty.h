@@ -67,8 +67,12 @@ int main(int argc, char **argv);
 void parse(char *file);
 void opcode(char *command, unsigned int line_num, stack_t **stack);
 void add(stack_t **stack, unsigned int line_num);
-void free_stack(stack_t *head);
 void _stack(stack_t **stack, stack_t *new);
 void _queue(stack_t **stack, stack_t *new);
+void free_all(stack_t **head);
+void pint(stack_t **stack, unsigned int line_num);
+void pop(stack_t **stack, unsigned int line_num);
+void swap(stack_t **stack, unsigned int line_num);
+void nop(stack_t **stack, unsigned int line_num);
 
 #endif

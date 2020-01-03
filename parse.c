@@ -2,7 +2,7 @@
 
 void parse(char *file)
 {
-	size_t size = 0;
+        size_t size = 0;
 	unsigned int line_num = 1;
 	char *str;
 	stack_t *stack = NULL;
@@ -10,7 +10,7 @@ void parse(char *file)
 	char *command;
 
 	file_input = fopen(file, "r");
-	if (!file_input)
+	if (file_input == NULL)
 	{
 		printf("Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
@@ -21,14 +21,9 @@ void parse(char *file)
 	{
 		arg_holder.input_str = str;
 		command = strtok(str, DELIMS);
-		if (!command)
-		{
-			line_num++;
-			continue;
-		}
 		arg_holder.arg = strtok(NULL, DELIMS);
 		opcode(command, line_num, &stack);
 		line_num++;
 	}
-	free(&stack);
+	free_all(&stack);
 }
