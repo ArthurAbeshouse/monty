@@ -10,6 +10,8 @@
 #include <fcntl.h>
 #include <ctype.h>
 
+#define DELIMS "\n \r\t\a"
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -21,9 +23,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -36,8 +38,37 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * struct var_struct - struct for global variable
+ * @arg: arguments
+ * @input_str: input string
+ * @SQ: check for stack or queue
+ * @file: file descripter
+ */
+typedef struct global_struct
+{
+	char *arg;
+	char *input_str;
+	int SQ;
+	FILE *file;
+} global_var;
+
+extern global_var arg_holder;
+global_var arg_holder;
+
+void pall(stack_t **stack, unsigned int line_num);
+int isnum(char *str);
+void push(stack_t **stack, unsigned int line_num);
+int main(int argc, char **argv);
+void parse(char *file);
+void opcode(char *command, unsigned int line_num, stack_t **stack);
+void add(stack_t **stack, unsigned int line_num);
+void free_stack(stack_t *head);
+void _stack(stack_t **stack, stack_t *new);
+void _queue(stack_t **stack, stack_t *new);
 
 #endif
