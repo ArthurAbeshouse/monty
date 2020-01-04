@@ -43,16 +43,6 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 		arg_holder.SQ = 0;
 		return;
 	}
-	opcodes2(command, ops, i));
-}
-/**
- * opcode2 - execute operation code
- * @command: command input
- * @ops: op codes
- * @i: integer for the loop
- */
-void opcode2(char *command, instruction_t ops, int i)
-{
 
 	for (i = 0; ops[i].opcode; i++)
 	{
