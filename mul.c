@@ -7,21 +7,21 @@
 
 void mul(stack_t **stack, unsigned int line_num)
 {
-  stack_t *current = NULL;
-  int total = 0;
+	stack_t *current = NULL;
+	int total = 0;
 
-  if (!stack || !(*stack) || !(*stack)->next)
-    {
-      printf("L%d: can't mul, stack too short\n", line_num);
-      free_all(stack);
-      exit(EXIT_FAILURE);
-    }
+	if (!stack || !(*stack) || !(*stack)->next)
+	{
+		printf("L%d: can't mul, stack too short\n", line_num);
+		free_all(stack);
+		exit(EXIT_FAILURE);
+	}
 
-  current = *stack;
+	current = *stack;
 
-  total = current->next->n * current->n;
+	total = current->next->n * current->n;
 
-  pop(stack, line_num);
+	pop(stack, line_num);
 
-  (*stack)->n = total;
+	(*stack)->n = total;
 }

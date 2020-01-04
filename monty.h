@@ -43,7 +43,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct var_struct - struct for global variable
+ * struct global_struct - struct for global variable
  * @arg: arguments
  * @input_str: input string
  * @SQ: check for stack or queue

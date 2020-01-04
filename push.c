@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * isnum - check if string is a number
+ * @str: string input
+ * Return: 0 if false 1 if true
+ */
 
 int isnum(char *str)
 {
@@ -17,6 +22,8 @@ int isnum(char *str)
 
 /**
  * _stack - LIFO data type
+ * @stack: stack of the memory
+ * @new: new stack to add
  */
 void _stack(stack_t **stack, stack_t *new)
 {
@@ -38,6 +45,8 @@ void _stack(stack_t **stack, stack_t *new)
 
 /**
  * _queue - FIFO data type
+ * @stack: stack of the memory
+ * @new: new stack to add
  */
 void _queue(stack_t **stack, stack_t *new)
 {
@@ -62,6 +71,11 @@ void _queue(stack_t **stack, stack_t *new)
 	}
 }
 
+/**
+ * push - push integers to memory
+ * @stack: stack of memory
+ * @line_num: line number
+ */
 void push(stack_t **stack, unsigned int line_num)
 {
 	stack_t *new_node;
