@@ -1,8 +1,12 @@
 #include "monty.h"
+/**
+ * parse - parse through the file
+ * @file: name of the file
+ */
 
 void parse(char *file)
 {
-        size_t size = 0;
+	size_t size = 0;
 	unsigned int line_num = 1;
 	char *str;
 	stack_t *stack = NULL;
