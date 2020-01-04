@@ -11,11 +11,11 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
-		/*		{"sub", sub},
+		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
-		{"pchar", pchar},
+		/*		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},*/
