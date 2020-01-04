@@ -80,8 +80,6 @@ void push(stack_t **stack, unsigned int line_num)
 {
 	stack_t *new_node;
 
-	if (stack == NULL)
-		exit(EXIT_FAILURE);
 	if (!(isnum(arg_holder.arg)))
 	{
 		printf("L%u: usage: push integer\n", line_num);
