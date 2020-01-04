@@ -1,13 +1,15 @@
 #include "monty.h"
 /**
  * _div - divide top 2 numbers
- * @stack: inout stack address
- * @line_num: current lin num
+ * @stack: input stack address
+ * @line_num: current line number
  */
 void _div(stack_t **stack, unsigned int line_num)
 {
 	stack_t *current = NULL;
 	int total = 0;
+
+	(void)line_num;
 
 	if (!stack || !(*stack) || !(*stack)->next)
 	{
@@ -27,7 +29,9 @@ void _div(stack_t **stack, unsigned int line_num)
 
 	total = current->next->n / current->n;
 
-	pop(stack, line_num);
+	*stack = current->next;
+
+	free(current);
 
 	(*stack)->n = total;
 }
