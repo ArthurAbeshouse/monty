@@ -6,16 +6,16 @@
 
 void free_all(stack_t **head)
 {
-  stack_t *current;
+	stack_t *current;
 
-  if (head == NULL)
-    return;
-  free(arg_holder.input_str);
-  fclose(arg_holder.file);
-  while (*head != NULL)
-    {
-      current = (*head)->next;
-      free(*head);
-      *head = current;
-    }
+	if (head == NULL)
+		return;
+	free(arg_holder.input_str);
+	fclose(arg_holder.file);
+	while (*head != NULL)
+	{
+		current = (*head)->next;
+		free(*head);
+		*head = current;
+	}
 }

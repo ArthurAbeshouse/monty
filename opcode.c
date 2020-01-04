@@ -1,13 +1,20 @@
 #include "monty.h"
 
+/**
+ * opcode - check for operation code
+ * @command: command input
+ * @line_num: line number
+ * @stack: stack of memory
+ */
+
 void opcode(char *command, unsigned int line_num, stack_t **stack)
 {
-        int i = 0;
+	int i = 0;
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
-                {"pop", pop},
+		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
@@ -15,15 +22,15 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
-		/*{"pchar", pchar},
-		{"pstr", pstr},
-		{"rotl", rotl},
-		{"rotr", rotr},*/
+		/*{"pchar", pchar},*/
+/*		{"pstr", pstr}, */
+/*		{"rotl", rotl}, */
+/*		{"rotr", rotr},*/
 		{NULL, NULL}
 	};
 
 	if (command == NULL)
-	  return;
+		return;
 	if (command[0] == '#')
 		return;
 	if (strcmp(command, "stack") == 0)
@@ -32,10 +39,20 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 		return;
 	}
 	if (strcmp(command, "queue") == 0)
-        {
-                arg_holder.SQ = 0;
-                return;
-        }
+	{
+		arg_holder.SQ = 0;
+		return;
+	}
+	opcodes2(command, ops, i));
+}
+/**
+ * opcode2 - execute operation code
+ * @command: command input
+ * @ops: op codes
+ * @i: integer for the loop
+ */
+void opcode2(char *command, instruction_t ops, int i)
+{
 
 	for (i = 0; ops[i].opcode; i++)
 	{
