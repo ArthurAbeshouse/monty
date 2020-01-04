@@ -22,6 +22,8 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 		{NULL, NULL}
 	};
 
+	if (command == NULL)
+	  return;
 	if (command[0] == '#')
 		return;
 	if (strcmp(command, "stack") == 0)
