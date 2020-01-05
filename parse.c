@@ -30,4 +30,5 @@ void parse(char *file)
 		line_num++;
 	}
 	free_all(&stack);
+	fclose(arg_holder.file);
 }
