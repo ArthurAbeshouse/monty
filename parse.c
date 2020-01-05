@@ -8,10 +8,10 @@ void parse(char *file)
 {
 	size_t size = 0;
 	unsigned int line_num = 1;
-	char *str;
+	char *str = NULL;
 	stack_t *stack = NULL;
-	FILE *file_input;
-	char *command;
+	FILE *file_input = NULL;
+	char *command = NULL;
 
 	file_input = fopen(file, "r");
 	if (file_input == NULL)
