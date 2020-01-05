@@ -60,27 +60,27 @@ typedef struct global_struct
 extern global_var arg_holder;
 global_var arg_holder;
 
-void pall(stack_t **stack, unsigned int line_num);
+void pall(stack_t **stack, unsigned int line_number);
 int isnum(char *str);
-void push(stack_t **stack, unsigned int line_num);
+void push(stack_t **stack, unsigned int line_number);
 int main(int argc, char **argv);
 void parse(char *file);
-void opcode(char *command, unsigned int line_num, stack_t **stack);
-void add(stack_t **stack, unsigned int line_num);
+void opcode(char *command, unsigned int line_number, stack_t **stack);
+void add(stack_t **stack, unsigned int line_number);
 void _stack(stack_t **stack, stack_t *new);
 void _queue(stack_t **stack, stack_t *new);
 void free_all(stack_t **head);
-void pint(stack_t **stack, unsigned int line_num);
-void pop(stack_t **stack, unsigned int line_num);
-void swap(stack_t **stack, unsigned int line_num);
-void nop(stack_t **stack, unsigned int line_num);
-void sub(stack_t **stack, unsigned int line_num);
-void _div(stack_t **stack, unsigned int line_num);
-void mul(stack_t **stack, unsigned int line_num);
-void mod(stack_t **stack, unsigned int line_num);
-void pchar(stack_t **stack, unsigned int line_num);
-void pstr(stack_t **stack, unsigned int line_num);
-void rotl(stack_t **stack, unsigned int line_num);
-void rotr(stack_t **stack, unsigned int line_num);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 
 #endif

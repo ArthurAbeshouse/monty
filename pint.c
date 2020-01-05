@@ -5,11 +5,11 @@
  * @stack: stack of the memory
  * @line_num: line number
  */
-void pint(stack_t **stack, unsigned int line_num)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
-		printf("L%d: can't pint, stack empty\n", line_num);
+		printf("L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);

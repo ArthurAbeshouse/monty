@@ -74,15 +74,15 @@ void _queue(stack_t **stack, stack_t *new)
 /**
  * push - push integers to memory
  * @stack: stack of memory
- * @line_num: line number
+ * @line_number: line number
  */
-void push(stack_t **stack, unsigned int line_num)
+void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 
 	if (!(isnum(arg_holder.arg)))
 	{
-		printf("L%u: usage: push integer\n", line_num);
+		printf("L%u: usage: push integer\n", line_number);
 		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
