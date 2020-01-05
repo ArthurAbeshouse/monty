@@ -10,7 +10,7 @@
 #include <fcntl.h>
 #include <ctype.h>
 
-#define DELIMS "\n \r\t\a"
+#define DELIMS "\n \t"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
