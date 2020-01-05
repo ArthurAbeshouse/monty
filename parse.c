@@ -16,7 +16,7 @@ void parse(char *file)
 	file_input = fopen(file, "r");
 	if (file_input == NULL)
 	{
-	  fprintf(stderr, "Error: Can't open file %s\n", file);
+		fprintf(stderr, "Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
 	}
 	arg_holder.file = file_input;
