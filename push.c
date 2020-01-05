@@ -74,22 +74,22 @@ void _queue(stack_t **stack, stack_t *new)
 /**
  * push - push integers to memory
  * @stack: stack of memory
- * @line_number: line number
+ * @line_num: line number
  */
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_num)
 {
 	stack_t *new_node;
 
 	if (!(isnum(arg_holder.arg)))
 	{
-		printf("L%u: usage: push integer\n", line_number);
+	  fprintf(stderr, "L%u: usage: push integer\n", line_num);
 		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		printf("Error: malloc failed\n");
+	  fprintf(stderr, "Error: malloc failed\n");
 		free_all(stack);
 		exit(EXIT_FAILURE);
 	}

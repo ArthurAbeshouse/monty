@@ -5,7 +5,7 @@
  * @stack: the stack
  * @line_num: line number
  */
-void pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_num)
 {
 	stack_t *current;
 
