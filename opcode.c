@@ -30,9 +30,15 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 	if (command == NULL || command[0] == '#')
 		return;
 	if (strcmp(command, "stack") == 0)
+	{
 		arg_holder.SQ = 1;
+		return;
+	}
 	if (strcmp(command, "queue") == 0)
+	{
 		arg_holder.SQ = 0;
+		return;
+	}
 
 	for (i = 0; ops[i].opcode; i++)
 	{
